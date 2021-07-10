@@ -1,0 +1,105 @@
+
+
+*********************************** ОПИСАНИЕ РАБОТЫ URL (API) *************************************
+
+// регистрация
+http://62.109.19.148:5000/reg_N/?login="lex1"&password="lex1"
+
+// получние пользователя id зная логин и пароль
+http://62.109.19.148:5000/getUserID_N/?login=%22lex1%22&password=%22lex1%22
+вывод по данному запросу (2,)
+
+// получние пользователя id зная логин
+http://62.109.19.148:5000/getUserID_Login_N/?login=%22lex1%22
+вывод по данному запросу (2,)
+
+
+// получение пароля по логину
+http://62.109.19.148:5000/getPassword_Login_N/?login=%22lex1%22
+вывод по данному запросу (u'lex1',)
+
+// получение канала по логину
+http://62.109.19.148:5000/getChanels_Login_N/?login=%22lex1%22
+вывод по запросу НЕТ так как еще не использовался
+
+// получение всех пользователей (deprecate)
+http://62.109.19.148:5000/getUsers_N/
+вывод по запросу (u'testn',)(u'lex1',)
+
+// получение всех пользователей
+http://62.109.19.148:5000/getListUsers_N
+вывод по запросу u'testn'u'lex1'u'dim'
+
+
+++++++++++++++++++++++++++++++++++++ ОПИСАНИЕ РАБОТЫ ФИЛЬТРОВ ++++++++++++++++++++++++++++++++++++++
+
+// фильтр на клиенте
+String[] filterRegExprForUserName(String strUser) на вход u'testn'u'lex1'u'dim' на выходе будет testn lex1 dim
+
+// фильтр на сервере
+FILTER_ONE_N(str) на вход подавая строку (2,) на выходе получим 2
+
+def FILTER_TWO_N(s):
+    m = 0
+    while m < s.__len__():
+        symb = s[m].__str__()
+        if symb == "\'":
+            s[m] = " "
+        m += 1
+    return s
+
+def MY_TEST_FILTER_N(t_str):
+    n_str = []
+    r = 0
+    while r < t_str.__len__():
+        symb = t_str[r]
+        if symb == ')' or symb == '(' or symb == ',':
+            n_str.append(' ')
+        else:
+            n_str.append(symb)
+        r += 1
+    return "".join(n_str)
+def MY_NEW_TEST_FILTER_N(str):
+    n_str = ""
+    list_symb = [')', '(', ',','\'']
+    k = 0
+    while k < str.__len__():
+        symbb = str[k]
+        flag = False
+        l = 0
+        while l < list_symb.__len__():
+            if symbb == list_symb[l]:
+                flag = True
+                break
+            l += 1
+        if flag == False:
+            n_str += symbb
+        k += 1
+    return n_str
+def FILTER_LOGIN(str):
+    i = 1
+    n_str = ""
+    while i < str.__len__():
+        n_str += str[i]
+    return n_str
+def CHANGE_SRT(str, num):
+    newStr = ""
+    if num == 1:
+        i = 0
+        while i < str.__len__():
+            curr_simb = str[i]
+            if curr_simb != '"':
+                newStr += str[i]
+            i += 1
+    if num == 2:
+        i = 0
+        while i < str.__len__():
+            curr_simb = str[i]
+            if curr_simb != '\'' or curr_simb != '(' or curr_simb != ')' or curr_simb != ',':
+                newStr += str[i]
+            i += 1
+    return newStr
+
+def FILTER_MESSAGE(tt):
+    n_s = tt.split("'")
+    return n_s[1].__str__()

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <!--<item-->
+        <!--android:id="@+id/nav_camera"-->
+        <!--android:icon="@drawable/ic_menu_camera"-->
+        <!--android:title="Import (не работает)"/>-->
+
+        <!--<item-->
+        <!--android:id="@+id/nav_manage"-->
+        <!--android:icon="@drawable/ic_menu_manage"-->
+        <!--android:title="Tools (не работает)"/>-->
+    </group>
+
+    <item android:title="МОИ ДАННЫЕ">
+        <menu>
+            <item
+                android:id="@+id/nav_list_mygroup"
+                android:icon="@drawable/ic_whatshot_black_48dp"
+                android:title="Мои группы"/>
+            <item
+                android:id="@+id/nav_list_task"
+                android:icon="@drawable/ic_contact_mail_black_48dp"
+                android:title="Мои задачи"/>
+            <item
+                android:id="@+id/nav_file"
+                android:icon="@drawable/ic_contact_mail_black_48dp"
+                android:title="Мои файлы"/>
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+        <item android:title="СОЗДАНИЕ">
+            <menu>
+                <item
+                    android:id="@+id/nav_list_manage_task"
+                    android:icon="@drawable/ic_touch_app_black_48dp"
+                    android:title="Созд. доску"/>
+                <item
+                    android:id="@+id/nav_group"
+                    android:icon="@drawable/ic_touch_app_black_48dp"
+                    android:title="Созд. группу"/>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <!--<item android:title="СОЗДАНИЕ">-->
+        <menu>
+            <item
+                android:id="@+id/nav_statistica"
+                android:icon="@drawable/ic_touch_app_black_48dp"
+                android:title="Статистика"/>
+        </menu>
+        <!--</item>-->
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="ОБЩИЕ">
+            <menu>
+                <item
+                    android:id="@+id/nav_list_user"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="Все пользователи"/>
+                <item
+                    android:id="@+id/nav_list_group"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="Все группы"/>
+            </menu>
+        </item>
+    </group>
+
+    <!--android:icon="@drawable/ic_menu_share"-->
+    <group android:checkableBehavior="single">
+        <item  android:title="ПРОЧЕЕ">
+            <menu>
+                <item
+                    android:id="@+id/nav_setting"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Настройки"/>
+                <item
+                    android:id="@+id/nav_exit"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="Выход"/>
+                <!--<item-->
+                <!--android:id="@+id/nav_about"-->
+                <!--android:icon="@drawable/ic_touch_app_black_48dp"-->
+                <!--android:title="О программе"/>-->
+            </menu>
+        </item>
+    </group>
+
+</menu>

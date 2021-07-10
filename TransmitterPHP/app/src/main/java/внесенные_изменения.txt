@@ -1,0 +1,14 @@
+
+1. !Robot.isOnline(getApplicationContext()) стало Robot.isOnline(getApplicationContext())
+    для работы на локальном сервере
+
+2. нужно добавлять index.php
+    http://"+VAR.IP_SERVER_GLOBAL+"/index.php?
+
+3. добавлен класс VAR в котором хранятся глобальные переменные
+
+4. во все файлы нужно добавить import Robot.*;
+
+5. файлы сервера находятся в диске Е в папке Transmitter и в папке localhost
+
+
